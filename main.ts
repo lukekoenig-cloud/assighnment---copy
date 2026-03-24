@@ -53,8 +53,9 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 200, 200)
 mySprite.setStayInScreen(true)
-info.setLife(2)
-game.onUpdateInterval(1000, function () {
+info.setLife(3)
+game.splash("use WASD to move and spacebar to shoot")
+game.onUpdateInterval(1, function () {
     enemyship = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -74,6 +75,6 @@ game.onUpdateInterval(1000, function () {
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Enemy)
     enemyship.x = scene.screenWidth()
-    enemyship.vx = -20
+    enemyship.vx = -75
     enemyship.y = randint(10, scene.screenHeight() - 10)
 })
